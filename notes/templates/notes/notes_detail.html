@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+<div class="border round">
+    <h1 class="my-5">{{note.title}}</h1>
+    <h2>{{note.text}}</h2>
+</div>
+<a href="{%url 'notes.list'%}" class="btn btn-secondary my-5">back</a>
+<a href="{%url 'notes.update' pk=note.id%}" class="btn btn-secondary my-5">edit</a>
+<a href="{%url 'notes.delete' pk=note.id%}" class="btn btn-danger my-5">delete</a>
+{% endblock %}
