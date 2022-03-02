@@ -12,17 +12,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 class deletenote(DeleteView):
     model=notes
-    success_url='/notes'
+    success_url='/'
     template_name='notes/notes_delete.html'
 
 class updatenote(UpdateView):
     model=notes
-    success_url='/notes'
+    success_url='/'
     form_class=notesforms
 
 class createnote(CreateView):
     model=notes
-    success_url='/notes'
+    success_url='/'
     form_class=notesforms
 
     def form_valid(self, form):
@@ -33,7 +33,7 @@ class createnote(CreateView):
 class listViews(LoginRequiredMixin,ListView):
     model=notes
     context_object_name='notes'
-    template_name='notes/notes_list.html'
+    template_name='/notes_list.html'
     #login_url='/admin'
 
     # def get_queryset(self):
