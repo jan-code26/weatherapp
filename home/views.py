@@ -8,19 +8,19 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import TemplateView
 from django.shortcuts import redirect
-class createuser(CreateView):
-    form_class=UserCreationForm
-    template_name='home/register.html'
-    success_url='/notes'
+# class createuser(CreateView):
+#     form_class=UserCreationForm
+#     template_name='home/register.html'
+#     success_url='/notes'
 
-    def get(self,request,*args,**kwargs):
-        if(self.request.user.is_authenticated):
-            return redirect("notes.list")
-        return super().get(request,*args,**kwargs)
-class loginuser(LoginView):
-    template_name='home/login.html'
-class logoutuser(LogoutView):
-    template_name='home/logout.html'
+#     def get(self,request,*args,**kwargs):
+#         if(self.request.user.is_authenticated):
+#             return redirect("notes.list")
+#         return super().get(request,*args,**kwargs)
+# class loginuser(LoginView):
+#     template_name='home/login.html'
+# class logoutuser(LogoutView):
+#     template_name='home/logout.html'
 class HomeView(TemplateView):
     template_name='home/welcome.html'
     extra_content={'today':datetime.today()}
