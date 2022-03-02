@@ -30,7 +30,7 @@ class createnote(CreateView):
         self.object.user=self.request.user
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
-class listViews(LoginRequiredMixin,ListView):
+class listViews(ListView):
     model=notes
     context_object_name='notes'
     #template_name='notes/notes_list.html'
