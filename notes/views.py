@@ -30,14 +30,14 @@ class createnote(CreateView):
         self.object.user=self.request.user
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
-class listViews(ListView):
+class listViews(LoginRequiredMixin,ListView):
     model=notes
     context_object_name='notes'
     template_name='notes/notes_list.html'
-    #login_url='/admin'
+    login_url='/admin'
 
-    # def get_queryset(self):
-    #     return self.request.user.notes.all()
+    def get_queryset(self):
+        return self.request.user.notes.all()
 class notedetail(DetailView):
     model=notes
     context_object_name='note'
