@@ -58,9 +58,9 @@ def index(request):
 #     template_name='home/login.html'
 # class logoutuser(LogoutView):
 #     template_name='home/logout.html'
-class HomeView(TemplateView):
-    template_name='home/welcome.html'
-    extra_content={'today':datetime.today()}
+# class HomeView(TemplateView):
+#     template_name='home/welcome.html'
+#     extra_content={'today':datetime.today()}
 
 # class AuthorizedView(LoginRequiredMixin,TemplateView):
 #     template_name='home/authorized.html'
