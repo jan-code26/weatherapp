@@ -1,9 +1,9 @@
 {%extends "base.html"%}
 
-
+{% comment %} 
 {%block content%}
 <h1 class="my-5">these are the notes</h1>
-{% comment %} <div class="row row-cols3 g-2">{% for note in notes%}
+<div class="row row-cols3 g-2">{% for note in notes%}
     <div class="col">
         <div class="p-3 border">
             <a href="{%url 'notes.details' pk=note.id%}" class="text-dark text-decoration-non">
@@ -34,4 +34,4 @@
     <p>Tokyo is the capital of Japan.</p>
   </div>
   
-{%endblock%}
+{% comment %} {%endblock%} {% endcomment %}
